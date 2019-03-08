@@ -134,10 +134,10 @@ function GetOverrides() {
     Debug "Resolved VERSION_REMOTEDESKTOP: $VERSION_REMOTEDESKTOP"
 }
 
-# Function to check whether MAU 3.18 or later command-line updates are available
+# Function to check whether MAU 4.1 or later command-line updates are available
 function CheckMAUInstall() {
-	if [ ! -e "/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app/Contents/MacOS/msupdate" ]; then
-    	echo "MAU 3.18 or later is required!"
+	if [[ $(defaults read "/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app/Contents/Info.plist" CFBundleVersion) < 4.1 ]]; then
+    	echo "MAU 4.1 or later is required!"
     	exit 1
 	fi
 }
