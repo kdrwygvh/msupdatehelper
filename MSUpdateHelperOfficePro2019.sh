@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Microsoft AutoUpdate Helper for Jamf Pro
 # Script Version 1.4
